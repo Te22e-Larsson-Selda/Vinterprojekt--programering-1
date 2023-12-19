@@ -5,15 +5,16 @@ Raylib.InitWindow(800, 600, "Hello");
 Raylib.SetTargetFPS(60);
 
 Random generator = new Random();
-int starX = generator.Next( 1, 800 );
-int starY ++ = starY;
+
+int starY = 0;
+int starX = generator.Next(1, 800);
 
 string scene = "start";
-Vector2 movement = new Vector2(0,0);
+Vector2 movement = new Vector2(0, 0);
 
 Texture2D background = Raylib.LoadTexture(@"Vinterproject, backgrund.png");
 
-Texture2D starImage = Raylib.LoadTexture("Stjärna.png");
+Texture2D starImage = Raylib.LoadTexture("Stjärna1.png");
 Rectangle starRect = new Rectangle(100, 100, 32, 32);
 starRect.Width = starImage.Width;
 starRect.Height = starImage.Height;
@@ -30,13 +31,15 @@ int points = 0;
 float speed = 5;
 
 
-while (!Raylib.WindowShouldClose()){
+while (!Raylib.WindowShouldClose())
+{
     // --------------------------------------------------------------------------
     // GAME LOGIC
     // --------------------------------------------------------------------------
 
     if (scene == "start")
     {
+
         if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
         {
             scene = "game";
@@ -63,16 +66,27 @@ while (!Raylib.WindowShouldClose()){
         {
             movement.Y = 1;
         }
-        
+
         if (movement.Length() > 0)
         {
             movement = Vector2.Normalize(movement) * speed;
         }
 
+
+        if (starRect.Y < 0|| starRect.Y > 600)
+        {
+            starX = generator.Next(1, 800);
+            starY = 0;
+        }
+        else
+        {
+            starY = 2 + starY;
+        }
+
         characterRect.X += movement.X;
         characterRect.Y += movement.Y;
 
-         if (characterRect.X < 0 || characterRect.X > 800 - 100)
+        if (characterRect.X < 0 || characterRect.X > 800 - 100)
         {
             characterRect.X -= movement.X;
         }
@@ -84,7 +98,6 @@ while (!Raylib.WindowShouldClose()){
         if (Raylib.CheckCollisionRecs(characterRect, starRect))
         {
             points++;
-
         }
 
         foreach (Rectangle wall in star)
@@ -92,7 +105,7 @@ while (!Raylib.WindowShouldClose()){
             if (Raylib.CheckCollisionRecs(characterRect, starRect))
             {
                 starRect.X = starX;
-                starRect.Y = 0;
+                starRect.Y = starY;
             }
         }
     }
@@ -112,7 +125,7 @@ while (!Raylib.WindowShouldClose()){
         Raylib.DrawTexture(background, 0, 0, Color.WHITE);
 
         Raylib.DrawTexture(characterImage, (int)characterRect.X, (int)characterRect.Y, Color.LIGHTGRAY);
-        Raylib.DrawTexture(starImage,(int)starRect.X, (int)starRect.Y, Color.WHITE);
+        Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
         Raylib.DrawText($"Points: {points}", 10, 10, 32, Color.DARKBLUE);
 
     }
