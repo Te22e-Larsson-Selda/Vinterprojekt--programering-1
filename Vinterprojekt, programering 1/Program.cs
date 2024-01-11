@@ -27,6 +27,9 @@ Rectangle characterRect = new Rectangle(100, 100, 32, 32);
 characterRect.Width = characterImage.Width;
 characterRect.Height = characterImage.Height;
 
+characterRect.X = 400 - 50;
+characterRect.Y = 300 - 21;
+
 int points = 0;
 int speed = 5;
 
@@ -135,6 +138,8 @@ while (!Raylib.WindowShouldClose())
         Raylib.ClearBackground(Color.WHITE);
         Raylib.DrawTexture(background, 0, 0, Color.WHITE);
         Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
+        Raylib.DrawText($"YOU WIN", 300, 400, 32, Color.DARKBLUE);
+
     }
 
     Raylib.EndDrawing();
