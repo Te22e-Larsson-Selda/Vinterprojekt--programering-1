@@ -6,7 +6,7 @@ Raylib.SetTargetFPS(60);
 
 Random generator = new Random();
 
-int starY = 0;
+int starY = 1;
 int starX = generator.Next(1, 800);
 
 string scene = "start";
@@ -28,7 +28,7 @@ characterRect.Width = characterImage.Width;
 characterRect.Height = characterImage.Height;
 
 int points = 0;
-float speed = 5;
+int speed = 5;
 
 
 while (!Raylib.WindowShouldClose())
@@ -73,15 +73,13 @@ while (!Raylib.WindowShouldClose())
         }
 
 
-        if (starRect.Y < 0|| starRect.Y > 600)
+        if (starRect.Y < 0 || starRect.Y > 600)
         {
             starX = generator.Next(1, 800);
             starY = 0;
         }
-        else
-        {
-            starY = 2 + starY;
-        }
+
+        starY = starY + speed;
 
         characterRect.X += movement.X;
         characterRect.Y += movement.Y;
@@ -98,15 +96,18 @@ while (!Raylib.WindowShouldClose())
         if (Raylib.CheckCollisionRecs(characterRect, starRect))
         {
             points++;
+            starX = generator.Next(1, 800);
+            starY = 0;
         }
 
         foreach (Rectangle wall in star)
         {
-            if (Raylib.CheckCollisionRecs(characterRect, starRect))
-            {
-                starRect.X = starX;
-                starRect.Y = starY;
-            }
+            starRect.X = starX;
+            starRect.Y = starY;
+        }
+        if (points == 15)
+        {
+            scene = "win";
         }
     }
     // --------------------------------------------------------------------------
@@ -128,6 +129,12 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
         Raylib.DrawText($"Points: {points}", 10, 10, 32, Color.DARKBLUE);
 
+    }
+    else if (scene == "win")
+    {
+        Raylib.ClearBackground(Color.WHITE);
+        Raylib.DrawTexture(background, 0, 0, Color.WHITE);
+        Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
     }
 
     Raylib.EndDrawing();
