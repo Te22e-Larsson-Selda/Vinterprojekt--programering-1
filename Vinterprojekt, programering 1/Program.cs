@@ -13,6 +13,7 @@ string scene = "start";
 Vector2 movement = new Vector2(0, 0);
 
 Texture2D background = Raylib.LoadTexture(@"Vinterproject, backgrund.png");
+Texture2D backgroundWin = Raylib.LoadTexture(@"Vinterproject, backgrund win.png");
 
 Texture2D starImage = Raylib.LoadTexture("Stjärna1.png");
 Rectangle starRect = new Rectangle(100, 100, 32, 32);
@@ -136,7 +137,7 @@ while (!Raylib.WindowShouldClose())
     else if (scene == "win")
     {
         Raylib.ClearBackground(Color.WHITE);
-        Raylib.DrawTexture(background, 0, 0, Color.WHITE);
+        Raylib.DrawTexture(backgroundWin, 0, 0, Color.WHITE);
         Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
         Raylib.DrawText($"YOU WIN", 300, 400, 32, Color.DARKBLUE);
 
