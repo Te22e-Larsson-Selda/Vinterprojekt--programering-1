@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Raylib-cs/5.0.0": {
+      "Raylib-cs/6.0.0": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -52,10 +52,10 @@
     }
   },
   "libraries": {
-    "Raylib-cs/5.0.0": {
-      "sha512": "eVpVxfejtkLXVtJgEmM63SuIS+Qw/ooLLqbhSKjKTaBxnE0NuSp6YJQU9W69AsZheXWFvK7ZPgC8WcJdG23/WA==",
+    "Raylib-cs/6.0.0": {
+      "sha512": "SXyiBBUxn9/tI7AnDKqiBam34BsFTlfNPZ0pUhcxKv1KLzAhda4UKHLlDd0e46+4T4mGNzJntDnvKYQ79FXDsA==",
       "type": "package",
-      "path": "raylib-cs/5.0.0",
+      "path": "raylib-cs/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -64,7 +64,7 @@
         "lib/net5.0/Raylib-cs.xml",
         "lib/net6.0/Raylib-cs.dll",
         "lib/net6.0/Raylib-cs.xml",
-        "raylib-cs.5.0.0.nupkg.sha512",
+        "raylib-cs.6.0.0.nupkg.sha512",
         "raylib-cs.nuspec",
         "raylib-cs_64x64.png",
         "runtimes/linux-x64/native/libraylib.so",
@@ -124,7 +124,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Raylib-cs >= 5.0.0"
+      "Raylib-cs >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -173,7 +173,7 @@
         "dependencies": {
           "Raylib-cs": {
             "target": "Package",
-            "version": "[5.0.0, )"
+            "version": "[6.0.0, )"
           }
         },
         "imports": [

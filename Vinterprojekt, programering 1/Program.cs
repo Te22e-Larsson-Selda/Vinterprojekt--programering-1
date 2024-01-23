@@ -44,7 +44,7 @@ while (!Raylib.WindowShouldClose())
     if (scene == "start")
     {
 
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+        if (Raylib.IsKeyDown(KeyboardKey.Space))
         {
             scene = "game";
         }
@@ -54,19 +54,19 @@ while (!Raylib.WindowShouldClose())
         movement = Vector2.Zero;
 
         // kod här: läsa in knapptryck, ändra på movement
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
+        if (Raylib.IsKeyDown(KeyboardKey.Left))
         {
             movement.X = -1;
         }
-        else if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
+        else if (Raylib.IsKeyDown(KeyboardKey.Right))
         {
             movement.X = 1;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_UP))
+        if (Raylib.IsKeyDown(KeyboardKey.Up))
         {
             movement.Y = -1;
         }
-        else if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
+        else if (Raylib.IsKeyDown(KeyboardKey.Down))
         {
             movement.Y = 1;
         }
@@ -120,26 +120,26 @@ while (!Raylib.WindowShouldClose())
     Raylib.BeginDrawing();
     if (scene == "start")
     {
-        Raylib.ClearBackground(Color.SKYBLUE);
-        Raylib.DrawTexture(background, 0, 0, Color.WHITE);
-        Raylib.DrawText("Press SPACE to start", 200, 275, 32, Color.BLACK);
+        Raylib.ClearBackground(Color.SkyBlue);
+        Raylib.DrawTexture(background, 0, 0, Color.White);
+        Raylib.DrawText("Press SPACE to start", 200, 275, 32, Color.Black);
     }
     else if (scene == "game")
     {
-        Raylib.ClearBackground(Color.BLUE);
-        Raylib.DrawTexture(background, 0, 0, Color.WHITE);
+        Raylib.ClearBackground(Color.Blue);
+        Raylib.DrawTexture(background, 0, 0, Color.White);
 
-        Raylib.DrawTexture(characterImage, (int)characterRect.X, (int)characterRect.Y, Color.LIGHTGRAY);
-        Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
-        Raylib.DrawText($"Points: {points}", 10, 10, 32, Color.DARKBLUE);
+        Raylib.DrawTexture(characterImage, (int)characterRect.X, (int)characterRect.Y, Color.LightGray);
+        Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.White);
+        Raylib.DrawText($"Points: {points}", 10, 10, 32, Color.DarkBlue);
 
     }
     else if (scene == "win")
     {
-        Raylib.ClearBackground(Color.WHITE);
-        Raylib.DrawTexture(backgroundWin, 0, 0, Color.WHITE);
-        Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.WHITE);
-        Raylib.DrawText($"YOU WIN", 300, 400, 32, Color.DARKBLUE);
+        Raylib.ClearBackground(Color.White);
+        Raylib.DrawTexture(backgroundWin, 0, 0, Color.White);
+        Raylib.DrawTexture(starImage, (int)starRect.X, (int)starRect.Y, Color.White);
+        Raylib.DrawText($"YOU WIN", 300, 400, 32, Color.DarkBlue);
 
     }
 
