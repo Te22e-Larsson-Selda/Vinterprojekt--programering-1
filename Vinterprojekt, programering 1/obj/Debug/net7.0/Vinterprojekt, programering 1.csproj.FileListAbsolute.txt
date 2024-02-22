@@ -20,7 +20,7 @@ C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, progr
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\obj\Debug\net7.0\Vinterprojekt, programering 1.pdb
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\obj\Debug\net7.0\Vinterprojekt, programering 1.genruntimeconfig.cache
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\obj\Debug\net7.0\ref\Vinterprojekt, programering 1.dll
-C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\backgrund.png
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Måln.png
-C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Vinterproject, backgrund.png
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Stjärna1.png
+C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Vinterproject, backgrund.png
+C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Vinterproject, backgrund win.png
