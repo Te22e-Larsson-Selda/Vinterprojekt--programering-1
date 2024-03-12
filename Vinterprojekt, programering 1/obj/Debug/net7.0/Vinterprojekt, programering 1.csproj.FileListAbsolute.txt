@@ -24,3 +24,4 @@ C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, progr
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Stjärna1.png
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Vinterproject, backgrund.png
 C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Vinterproject, backgrund win.png
+C:\Users\selda.larssonsvensd\Documents\Programering 1\Hello\Vinterprojekt, programering 1\Vinterprojekt, programering 1\bin\Debug\net7.0\Stjärna2.png
