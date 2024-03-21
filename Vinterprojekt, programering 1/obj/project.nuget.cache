@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qmma6DbBv3nE7A+e9LV9/xvufI04h87kXvvJ+uVwWE6RFbR6cYBHBtwOA3nVXjXRfYFll74L6nVANMDd2JWW/Q==",
+  "dgSpecHash": "ddEIL8kdpKYGoZw/5FMQHoAYhiHxnwENBDVltqKUFqcGaJ3HQHma7qp9Q+M7iTXntN3symzO+qaJmhNbiAB1sQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\selda.larssonsvensd\\Documents\\Programering 1\\Hello\\Vinterprojekt, programering 1\\Vinterprojekt, programering 1\\Vinterprojekt, programering 1.csproj",
+  "projectFilePath": "C:\\Users\\selda.larssonsvensd\\Documents\\Programering 1\\Hello\\Vinterprojekt, programering 1\\Vinterprojekt, programering 1\\Vinterprojekt, programering 1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\selda.larssonsvensd\\.nuget\\packages\\raylib-cs\\5.0.0\\raylib-cs.5.0.0.nupkg.sha512",
     "C:\\Users\\selda.larssonsvensd\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
