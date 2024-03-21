@@ -17,13 +17,12 @@ Texture2D background = Raylib.LoadTexture(@"Vinterproject, backgrund.png");
 Texture2D winBackground = Raylib.LoadTexture(@"Vinterprojekt, backgrund win.png");
 
 Texture2D starImage1 = Raylib.LoadTexture("Stjärna1.png");
-Rectangle starRect1 = new Rectangle(100, 100, 32, 32);
-starRect1.Width = starImage1.Width;
-starRect1.Height = starImage1.Height;
+Rectangle starRect = new Rectangle(100, 100, 32, 32);
+starRect.Width = starImage1.Width;
+starRect.Height = starImage1.Height;
 
 List<Rectangle> star = new();
 star.Add(new Rectangle(760, 460, 32, 32));
-star.Add(new Rectangle(700, 400, 32, 32));
 
 Texture2D characterImage = Raylib.LoadTexture("Måln.png");
 Rectangle characterRect = new Rectangle(100, 100, 32, 32);
@@ -35,6 +34,8 @@ characterRect.Y = 300 - 21;
 
 int points = 0;
 int speed = 5;
+
+Color backgroundColor = Color.BLUE;
 
 while (!Raylib.WindowShouldClose())
 {
@@ -53,7 +54,7 @@ while (!Raylib.WindowShouldClose())
     {
         movement = ReadMovement(speed);
 
-        if (starRect1.Y < 0 || starRect1.Y > 600)
+        if (starRect.Y < 0 || starRect.Y > 600)
         {
             starX = generator.Next(1, 800);
             starY = 0;
@@ -63,7 +64,7 @@ while (!Raylib.WindowShouldClose())
 
         starY = starY + speed;
 
-        if (Raylib.CheckCollisionRecs(characterRect, starRect1))
+        if (Raylib.CheckCollisionRecs(characterRect, starRect))
         {
             points++;
             starX = generator.Next(1, 800);
@@ -72,13 +73,12 @@ while (!Raylib.WindowShouldClose())
 
         foreach (Rectangle wall in star)
         {
-            starRect1.X = starX;
-            starRect1.Y = starY;
+            starRect.X = starX;
+            starRect.Y = starY;
         }
-        if (points == 15)
+        if (points == 15 && star.Count == 1)
         {
-            
-
+            star.Add(new Rectangle(700, 400, 32, 32));
         }
 
         if (points == 30)
@@ -99,20 +99,17 @@ while (!Raylib.WindowShouldClose())
 
     else if (scene == "game")
     {
-        Raylib.ClearBackground(Color.BLUE);
+        Raylib.ClearBackground(backgroundColor);
         Raylib.DrawTexture(background, 0, 0, Color.WHITE);
 
         Raylib.DrawTexture(characterImage, (int)characterRect.X, (int)characterRect.Y, Color.LIGHTGRAY);
-        Raylib.DrawTexture(starImage1, (int)starRect1.X, (int)starRect1.Y, Color.WHITE);
-        Raylib.DrawText($"Points: {points}", 10, 10, 32, Color.DARKBLUE);
-    }
-    else if (scene == "R2")
-    {
-        Raylib.ClearBackground(Color.DARKBLUE);
-        Raylib.DrawTexture(background, 0, 0, Color.WHITE);
 
-        Raylib.DrawTexture(characterImage, (int)characterRect.X, (int)characterRect.Y, Color.LIGHTGRAY);
-        Raylib.DrawTexture(starImage1, (int)starRect1.X, (int)starRect1.Y, Color.WHITE);
+
+        for (int i = 0; i < star.Count; i++)
+        {
+            Raylib.DrawTexture(starImage1, (int)star[i].X, (int)star[i].Y, Color.WHITE);
+            
+        }
         Raylib.DrawText($"Points: {points}", 10, 10, 32, Color.DARKBLUE);
     }
 
